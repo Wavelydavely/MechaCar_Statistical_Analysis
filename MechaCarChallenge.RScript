@@ -8,3 +8,7 @@ total_summary <- tbl %>% summarise(Mean=mean(PSI),Median=median(PSI),Variance=va
 total_summary
 lot_summary <- tbl %>% group_by(Manufacturing_Lot) %>% summarise(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
 lot_summary
+t.test(tbl$PSI,mu=1500)
+t.test(subset(Suspension_Coil, Manufacturing_Lot=="Lot1")$PSI, mu=1500)
+t.test(subset(Suspension_Coil, Manufacturing_Lot=="Lot2")$PSI, mu=1500)
+t.test(subset(Suspension_Coil, Manufacturing_Lot=="Lot3")$PSI, mu=1500)
